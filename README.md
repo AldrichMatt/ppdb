@@ -1,4 +1,4 @@
-# Dashboard Sekolah
+# PPDB SDTI Hidayah
 
 Sistem Informasi Manajemen Sekolah dan Penerimaan Peserta Didik Baru (PPDB) berbasis web dengan arsitektur **Git Monorepo**, menggunakan Next.js sebagai frontend dan Django REST Framework sebagai backend.
 
