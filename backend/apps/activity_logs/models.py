@@ -13,3 +13,6 @@ class Logs(models.Model):
 
     def __str__(self):
         return f"Log - {self.user.username}({self.created_at.strftime('%Y-%m-%d %H:%M:%S')})"
+
+    class Meta:
+        ordering = ['-created_at']

@@ -43,6 +43,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterModelTable(
             name='teacher',
-            table=('teachers',),
+            table='teachers',
         ),
     ]

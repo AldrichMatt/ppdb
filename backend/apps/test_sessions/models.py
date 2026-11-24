@@ -14,3 +14,6 @@ class TestSession(models.Model):
 
     def __str__(self):
         return f'Test Session - {self.session_name} ({self.registration.academic_year})'
+
+    class Meta: 
+        ordering = ['test_date', 'start_time', 'session_name']

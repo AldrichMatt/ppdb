@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Media(models.Model):
+    content_id = models.ForeignKey('contents.Content', on_delete=models.CASCADE, related_name='medias', null=True, blank=True)
     path = models.FileField(upload_to='media/')
     filename = models.CharField(max_length=255)
     mime_type = models.CharField(max_length=50)
@@ -13,3 +14,6 @@ class Media(models.Model):
 
     def __str__(self):
         return self.filename
+
+    class Meta:
+        ordering = ['order', '-uploaded_at']
