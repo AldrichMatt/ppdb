@@ -10,11 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
+import os
+from dotenv import load_dotenv
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Import environment variables from backend/.env file
+load_dotenv(BASE_DIR / '.env')  # Load environment variables from .env file
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
@@ -40,8 +45,20 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 
+    'apps.activity_logs.apps.ActivityLogsConfig',
+    'apps.categories.apps.CategoriesConfig',
+    'apps.contents.apps.ContentsConfig',
     'apps.core.apps.CoreConfig',
+    'apps.facilities.apps.FacilitiesConfig',
+    'apps.medias.apps.MediasConfig',
+    'apps.programs.apps.ProgramsConfig',
+    'apps.registration_prices.apps.RegistrationPricesConfig',
+    'apps.registrations.apps.RegistrationsConfig',
+    'apps.school_profile.apps.SchoolProfileConfig',
+    'apps.stats.apps.StatsConfig',
     'apps.teachers.apps.TeachersConfig',
+    'apps.test_sessions.apps.TestSessionsConfig',
+    'apps.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,9 +96,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.getenv("DB_NAME"),
+        "USER": os.getenv("DB_USER"),
+        "PASSWORD": os.getenv("DB_PASSWORD"),
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT"),
+        "OPTIONS": {
+            "charset": "utf8mb4",
+        },
     }
 }
 

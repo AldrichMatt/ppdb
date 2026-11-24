@@ -1,0 +1,42 @@
+this is just a personal notes, ignore this
+
+Create
+
+teacher = Teacher.objects.create(
+    employee_number="T001",
+    full_name="John Doe",
+    position="Math Teacher",
+    email="johndoe@example.com",
+    phone="1234567890",
+    active=True
+)
+
+Read
+
+All
+Teacher.objects.all()
+
+ID
+Teacher.objects.get(id=1)
+
+Name
+Teacher.objects.filter(
+    full_name="Andi Pratama"
+)
+
+Active
+Teacher.objects.filter(
+    active=True
+)
+
+Update
+teacher = Teacher.objects.get(id=1)
+
+teacher.phone = "089876543210"
+
+teacher.save()
+
+Delete
+teacher = Teacher.objects.get(id=1)
+
+teacher.delete()
