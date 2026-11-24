@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ActivityLogsConfig(AppConfig):
-    name = 'activity_logs'
+    name = 'apps.activity_logs'

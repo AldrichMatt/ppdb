@@ -12,3 +12,6 @@ class Prices(models.Model):
 
     def __str__(self):
         return f'Price - {self.component} ({self.registration.academic_year})'
+
+    class Meta:
+        ordering = ['order', '-created_at']

@@ -22,3 +22,6 @@ class Registration(models.Model):
 
     def __str__(self):
         return 'Registration - ' + self.academic_year
+
+    class Meta:
+        ordering = ['-created_at']

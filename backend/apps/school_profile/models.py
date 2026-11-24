@@ -21,3 +21,6 @@ class SchoolProfile(models.Model):
 
     def __str__(self):
         return 'School Profile - ' + self.school_name
+
+    class Meta:
+        ordering = ['-created_at']

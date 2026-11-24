@@ -26,10 +26,14 @@ class Content(models.Model):
             ('diarsipkan', 'Diarsipkan')
         ], default='draft')
     order = models.PositiveIntegerField(default=0, null=False, blank=False)
+    published_at = models.DateTimeField(blank=True, null=True)
+    archived_at = models.DateTimeField(blank=True, null=True)
     made_by = models.ForeignKey('users.User', on_delete=models.PROTECT, related_name='contents', null=False, blank=False)
     updated_by = models.ForeignKey('users.User', on_delete=models.PROTECT, related_name='updated_contents', null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['order', '-created_at']

@@ -8,3 +8,6 @@ class VisitorStats(models.Model):
     
     def __str__(self):
         return f"{self.amount} visitor - {self.page} ({self.date.strftime('%Y-%m-%d')})"
+
+    class Meta: 
+        ordering = ['-date', '-amount']

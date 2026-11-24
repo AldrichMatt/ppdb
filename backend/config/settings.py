@@ -45,8 +45,20 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
 
+    'apps.activity_logs.apps.ActivityLogsConfig',
+    'apps.categories.apps.CategoriesConfig',
+    'apps.contents.apps.ContentsConfig',
     'apps.core.apps.CoreConfig',
+    'apps.facilities.apps.FacilitiesConfig',
+    'apps.medias.apps.MediasConfig',
+    'apps.programs.apps.ProgramsConfig',
+    'apps.registration_prices.apps.RegistrationPricesConfig',
+    'apps.registrations.apps.RegistrationsConfig',
+    'apps.school_profile.apps.SchoolProfileConfig',
+    'apps.stats.apps.StatsConfig',
     'apps.teachers.apps.TeachersConfig',
+    'apps.test_sessions.apps.TestSessionsConfig',
+    'apps.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [

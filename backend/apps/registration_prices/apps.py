@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class RegistrationPricesConfig(AppConfig):
-    name = 'registration_prices'
+    name = 'apps.registration_prices'
